@@ -68,17 +68,17 @@ a {
   display: inline-block;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
-  color: #ffffff;
+  color: #fff;
   text-decoration: none;
   user-select: none;
-  border: 1px #ffffff solid;
+  border: 1px #1100ff;
   border-radius: 3px;
   transition: 0.4s ease;
 }
 
 .nav__btn:hover{
   color: #fff;
-  background: #d000ff;
+  background: #1100ff;
 }
 
 .nav__logout{
