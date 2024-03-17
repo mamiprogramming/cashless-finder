@@ -20,12 +20,12 @@
           <% if user_signed_in? %>
             <div class="nav__right">
               <%= link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete }, class: :nav__btn %>
-              <%#= link_to "New", new_message_path, class: :nav__btn %>
+              <%= link_to "New", new_venue_path, class: :nav__btn %>
             </div>
           <% else %>
             <div class="nav__right">
               <%= link_to "Login", new_user_session_path, class: :nav__btn %>
-              <%= link_to "New", new_user_registration_path, class: :nav__btn %>
+              <%= link_to "Sign up", new_user_registration_path, class: :nav__btn %>
             </div>
           <% end %>
         </div>
