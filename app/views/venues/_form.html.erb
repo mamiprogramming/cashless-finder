@@ -1,0 +1,15 @@
+<%= form_with model: venue, local: true do |f|%>
+  <div class="field">
+    <%= f.label :title, "ライヴハウスの名称" %><br />
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="weight-bold-text">
+    都道府県
+  </div>
+  <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"item-prefecture"}) %>
+
+  <div class="actions">
+    <%= f.submit "Save", class: :form__btn  %>
+  </div>
+<% end %>
