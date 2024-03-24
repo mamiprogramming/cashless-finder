@@ -1,5 +1,6 @@
 class Venue < ApplicationRecord
   belongs_to :user
+  has_many :comments
 
   validates :place_name, presence: true
   validates :user_id, presence: true

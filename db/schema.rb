@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_03_17_162430) do
+ActiveRecord::Schema[7.0].define(version: 2024_03_24_060349) do
+  create_table "comments", charset: "utf8mb4", force: :cascade do |t|
+    t.text "text", null: false
+    t.integer "cashless_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "venue_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_comments_on_user_id"
+    t.index ["venue_id"], name: "index_comments_on_venue_id"
+  end
+
   create_table "users", charset: "utf8mb4", force: :cascade do |t|
     t.string "user_name", null: false
     t.string "email", default: "", null: false
@@ -33,5 +44,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_17_162430) do
     t.index ["user_id"], name: "index_venues_on_user_id"
   end
 
+  add_foreign_key "comments", "users"
+  add_foreign_key "comments", "venues"
   add_foreign_key "venues", "users"
 end
