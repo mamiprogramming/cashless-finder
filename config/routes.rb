@@ -7,5 +7,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   root to: "venues#index"
   resources :users
-  resources :venues, only: [:index, :new, :create, :show]
+  resources :venues, only: [:index, :new, :create, :show]do
+    resources :comments, only: [:create]
+  end
 end

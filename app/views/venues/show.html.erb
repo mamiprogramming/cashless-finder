@@ -7,40 +7,48 @@
       <div class="prototype__prefecture">都道府県：<%= @venue.prefecture.name %></div>
       <%= link_to "by #{@venue.user.user_name}", user_path(@venue.user), class: :prototype__user %>
       <%# プロトタイプの投稿者とログインしているユーザーが同じであれば以下を表示する %>
-        <% if current_user == @venue.user %>
+      <% if current_user == @venue.user %>
         <div class="prototype__manage">
           <%#= link_to "編集する", edit_venue_path(@venue), class: :prototype__btn %>
           <%#= link_to "削除する", venue_path(@venue), data: { turbo_method: :delete }, class: :prototype__btn %>
         </div>
-        <% end %>
+      <% end %>
       <div class="prototype__comments">
         <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
-        <% if user_signed_in? && @comment %>
-          <%= form_with model: [@venue, @comment],local: true do |f|%>
+        <% if user_signed_in? %>
+          <%= form_with model: [@venue, @comment || @venue.comments.build], url: venue_comments_path(@venue), local: true do |f| %>
             <div class="field">
               <%= f.label :cashless_id, "支払い方法" %><br />
               <%= f.collection_select(:cashless_id, Cashless.all, :id, :name, {}, {class:"select-box", id:"item-prefecture"}) %><br />
               <%= f.label :text, "コメント" %><br />
-              <%= f.text_field :text, id:"comment_content" %>
+              <%= f.text_field :text, id:"comment_content" %><br />
+              <%#= f.label :image, "画像" %>
+              <%= f.file_field :image %>
             </div>
             <div class="actions">
               <%= f.submit "送信する", class: :form__btn  %>
             </div>
           <% end %>
         <% end %>
-        <% if @comments %>
-        <%# // ログインしているユーザーには上記を表示する %>
+        <% if @comments.any? %>
           <ul class="comments_lists">
-            <%# 投稿に紐づくコメントを一覧する処理を記述する %>
             <% @comments.each do |comment| %>
               <li class="comments_list">
-                <%= comment.cashless.name %>
-                <%= comment.text %>
-                <%= comment.created_at %>
-                <%#= link_to " (#{@comment.user.name}) ", user_path(comment.user), class: :comment_user %>
+                <% if comment.cashless.present? %>
+                  <div>支払い方法: <%= comment.cashless.name %></div>
+                <% end %>
+                <% if comment.text.present? %>
+                  <div>コメント: <%= comment.text %></div>
+                <% end %>
+                <%# if comment.image.attached? %>
+                  <%#= image_tag comment.image %>
+                <%# end %>
+                <% if comment.user.present? %>
+                  <div>投稿日時: <%= comment.created_at.strftime('%Y-%m-%d %H:%M:%S') %></div>
+                  <div>投稿者: <%= link_to comment.user.user_name, user_path(comment.user), class: :comment_user %></div>
+                <% end %>
               </li>
             <% end %>
-            <%# // 投稿に紐づくコメントを一覧する処理を記述する %>
           </ul>
         <% end %>
       </div>
