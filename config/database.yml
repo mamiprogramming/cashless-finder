@@ -1,23 +1,24 @@
-default: &default
-  adapter: mysql2
+  default: &default
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: root
-  password:
-  socket: /tmp/mysql.sock
 
 development:
   <<: *default
+  adapter: mysql2
+  username: root
+  password:
+  host: localhost
   database: cashless_finder_development
 
 test:
   <<: *default
+  adapter: mysql2
+  username: root
+  password:
+  host: localhost
   database: cashless_finder_test
 
 production:
   <<: *default
-  adapter: mysql2
-  database: cashless_finder_production
-  username: root
-  password: <%= ENV['DATABASE_PASSWORD'] %>
-  socket: /var/lib/mysql/mysql.sock
+  adapter: postgresql
+  url: <%= ENV['DATABASE_URL'] %>
