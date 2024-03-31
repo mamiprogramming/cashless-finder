@@ -1,15 +1,14 @@
-<div class="form__wrapper">
-  <h1 class="page-heading">会場キャッシュレス対応情報</h1>
-</div>
-
 <main class="main">
   <div class="inner">
-    <% if user_signed_in? %>
-      <div class="greeting">
+    <div class="form__wrapper">
+      <h1 class="page-heading">会場キャッシュレス対応情報</h1>
+      <% if user_signed_in? %>
+        <div class="greeting">
         こんにちは、
         <%= link_to "#{current_user.user_name}さん", user_path(current_user), class: :greeting__link %>
-      </div>
-    <% end %>
+        </div>
+      <% end %>
+    </div>
     <div class="card__wrapper">
       <%= render partial: 'venue', collection: @venue %>
     </div>
