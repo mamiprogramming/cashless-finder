@@ -14,8 +14,8 @@
     <header class="header">
       <div class="inner">
         <div class="nav">
-          <div class="nav__left">
-            <%= link_to "CashlessFinder", root_path %>
+          <div class="nav__title">
+            <%= link_to "CashlessFinder", root_path, class: "nav__logo" %>
           </div>
           <% if user_signed_in? %>
             <div class="nav__right">
