@@ -12,19 +12,6 @@
         </div>
       <% end %>
       <div class="detail__comments">
-        <% if user_signed_in? %>
-          <%= form_with model: [@venue, @comment || @venue.comments.build], url: venue_comments_path(@venue), local: true do |f| %>
-            <div class="detail__field">
-              <%= f.label :cashless_id, "支払い方法" %><br />
-              <%= f.collection_select(:cashless_id, Cashless.all, :id, :name, {}, {class:"select-box", id:"item-prefecture"}) %><br />
-              <%= f.label :text, "コメント" %><br />
-              <%= f.text_area :text, id: "comment_content", rows: 5, cols: 20 %><br />
-            </div>
-            <div class="actions">
-              <%= f.submit "Send", class: :nav__btn2  %>
-            </div>
-          <% end %>
-        <% end %>
         <% if @comments.any? %>
           <ul class="comments_lists">
             <% @comments.each do |comment| %>
@@ -45,6 +32,19 @@
               </li>
             <% end %>
           </ul>
+        <% end %>
+        <% if user_signed_in? %>
+          <%= form_with model: [@venue, @comment || @venue.comments.build], url: venue_comments_path(@venue), local: true do |f| %>
+            <div class="detail__field">
+              <%= f.label :cashless_id, "支払い方法" %><br />
+              <%= f.collection_select(:cashless_id, Cashless.all, :id, :name, {}, {class:"select-box", id:"item-prefecture"}) %><br />
+              <%= f.label :text, "コメント" %><br />
+              <%= f.text_area :text, id: "comment_content", rows: 5, cols: 20 %><br />
+            </div>
+            <div class="actions">
+              <%= f.submit "Send", class: :nav__btn2  %>
+            </div>
+          <% end %>
         <% end %>
       </div>
     </div>
