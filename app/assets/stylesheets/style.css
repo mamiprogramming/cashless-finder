@@ -87,7 +87,7 @@ a {
 }
 .page-heading {
   font-size: 30px;
-  margin-bottom: 28px;
+  margin-bottom: 18px;
 }
 .card__wrapper {
   display: flex;
@@ -122,6 +122,14 @@ a {
   font-weight: bold;
   text-align: center;
 }
+
+.prototype__prefecture{
+  display: block;
+  font-size: 16px;
+  color: black;
+  text-align: center;
+}
+
 .prototype__user{
   display: block;
   font-size: 16px;
