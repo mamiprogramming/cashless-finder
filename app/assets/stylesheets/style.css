@@ -72,6 +72,18 @@ a {
   transition: 0.4s ease;
 }
 
+.nav__btn2{
+  display: inline-block;
+  padding: 0.4em 1.6em;
+  font-size: 0.8em;
+  color: black;
+  text-decoration: none;
+  user-select: none;
+  border: 1px #1100ff;
+  border-radius: 3px;
+  transition: 0.4s ease;
+}
+
 .nav__btn:hover{
   color: #fff;
   background: #1100ff;
@@ -182,6 +194,7 @@ a {
 
 .comments_lists{
   padding-left: 20px;
+  text-align: center;
 }
 
 .comments_list{
