@@ -205,7 +205,7 @@ a {
   text-align: center;
 }
 
-.ul {
+ul {
   list-style-type: none;
 }
 
@@ -223,6 +223,10 @@ a {
   font-size: 16px;
   color: #999;
   text-decoration: underline;
+}
+
+.actions{
+  text-align: center;
 }
 
 

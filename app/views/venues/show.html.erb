@@ -19,8 +19,6 @@
               <%= f.collection_select(:cashless_id, Cashless.all, :id, :name, {}, {class:"select-box", id:"item-prefecture"}) %><br />
               <%= f.label :text, "コメント" %><br />
               <%= f.text_area :text, id: "comment_content", rows: 5, cols: 40 %><br />
-              <%#= f.label :image, "画像" %>
-              <%#= f.file_field :image %>
             </div>
             <div class="actions">
               <%= f.submit "Send", class: :form__btn  %>
@@ -32,20 +30,20 @@
             <% @comments.each do |comment| %>
               <li class="comments_list">
                 <% if comment.cashless.present? %>
-                  <% if current_user == comment.user %>
-                    <%= link_to "Delete", venue_comment_path(@venue, comment), data: { turbo_method: :delete }, class: :nav__btn2 %>
-                  <% end %>
+                  <%# if current_user == comment.user %>
+                    <%#= link_to "Delete", venue_comment_path(@venue, comment), data: { turbo_method: :delete }, class: :nav__btn2 %>
+                  <%# end %>
                   <div>支払い方法: <%= comment.cashless.name %></div>
                 <% end %>
                 <% if comment.text.present? %>
                   <div><%= comment.text %></div>
                 <% end %>
-                <%# if comment.image.attached? %>
-                  <%#= image_tag comment.image %>
-                <%# end %>
                 <% if comment.user.present? %>
                   <div>投稿日時: <%= comment.created_at.strftime('%Y-%m-%d %H:%M:%S') %></div>
                   <div>投稿者: <%= link_to comment.user.user_name, user_path(comment.user), class: :comment_user %></div>
+                <% end %>
+                <% if current_user == comment.user %>
+                  <%= link_to "Delete", venue_comment_path(@venue, comment), data: { turbo_method: :delete }, class: :nav__btn2 %>
                 <% end %>
               </li>
             <% end %>
