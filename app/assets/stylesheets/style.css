@@ -186,10 +186,23 @@ a {
 
 .detail__cashless{
   font-size: 24px;
+  text-decoration: underline;
+  margin-bottom: 12px;
+}
+
+.detail__cashless__comment{
+  font-size: 20px;
+  margin-bottom: 12px;
 }
 
 .detail__at{
   font-size: 16px;
+}
+
+.comment_user{
+  font-size: 16px;
+  color: #999;
+  text-decoration: underline;
 }
 
 .comments_lists{
@@ -215,12 +228,6 @@ a {
   .comments_list {
     width: 50%;
   }
-}
-
-.comment_user{
-  font-size: 16px;
-  color: #999;
-  text-decoration: underline;
 }
 
 .actions{

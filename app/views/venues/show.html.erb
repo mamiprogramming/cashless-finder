@@ -20,7 +20,7 @@
                   <div class="detail__cashless"><%= comment.cashless.name %></div>
                 <% end %>
                 <% if comment.text.present? %>
-                  <div class="detail__cashless"><%= comment.text %></div>
+                  <div class="detail__cashless__comment"><%= comment.text %></div>
                 <% end %>
                 <% if comment.user.present? %>
                   <div class="detail__at"><%= comment.created_at.strftime('%Y-%m-%d %H:%M:%S') %></div>
