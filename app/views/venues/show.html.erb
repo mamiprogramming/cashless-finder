@@ -38,7 +38,7 @@
                   <div>支払い方法: <%= comment.cashless.name %></div>
                 <% end %>
                 <% if comment.text.present? %>
-                  <div>コメント: <%= comment.text %></div>
+                  <div><%= comment.text %></div>
                 <% end %>
                 <%# if comment.image.attached? %>
                   <%#= image_tag comment.image %>
