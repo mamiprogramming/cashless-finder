@@ -140,6 +140,7 @@ a {
   font-weight: bold;
 }
 
+/* メイン */
 /* 詳細ページ */
 .detail__wrapper{
   min-height: calc(100vh - 161px);
