@@ -41,10 +41,6 @@ a {
   background-color: #000000;
   margin-bottom: 48px;
   padding: 20px 0;
-  color: #fff;
-  position: fixed;
-  width: 100%;
-  top: 0;
 }
 
 .inner {
@@ -208,9 +204,6 @@ a {
 .footer {
   background-color: #999;
   padding: 10px 0;
-  position: fixed;
-  width: 100%;
-  bottom: 0;
 }
 
 .copyright {
