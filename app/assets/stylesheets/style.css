@@ -41,6 +41,10 @@ a {
   background-color: #000000;
   margin-bottom: 48px;
   padding: 20px 0;
+  color: #fff;
+  position: fixed;
+  width: 100%;
+  top: 0;
 }
 
 .inner {
@@ -115,13 +119,6 @@ a {
 }
 .card__summary {
   font-size: 16px;
-}
-.card__user {
-  display: block;
-  font-size: 12px;
-  color: #999;
-  text-align: right;
-  text-decoration: underline;
 }
 
 /* 詳細ページ */
@@ -211,7 +208,11 @@ a {
 .footer {
   background-color: #999;
   padding: 10px 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
 }
+
 .copyright {
   text-align: center;
   color: #fff;
