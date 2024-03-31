@@ -186,6 +186,7 @@ a {
 
 .detail__cashless{
   font-size: 24px;
+  font-weight: bold;
   text-decoration: underline;
   margin-bottom: 12px;
 }
