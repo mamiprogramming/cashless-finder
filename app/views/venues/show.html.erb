@@ -35,7 +35,7 @@
             <% @comments.each do |comment| %>
               <li class="comments_list">
                 <% if comment.cashless.present? %>
-                  <% if current_user == @comment.user %>
+                  <% if current_user == comment.user %>
                     <%= link_to "削除する", venue_comment_path(@venue, comment), data: { turbo_method: :delete }, class: :prototype__btn %>
                   <% end %>
                   <div>支払い方法: <%= comment.cashless.name %></div>
