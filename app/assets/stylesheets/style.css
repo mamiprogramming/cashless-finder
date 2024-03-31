@@ -193,7 +193,7 @@ a {
 }
 
 .comments_lists{
-  margin: 100px;
+  margin: 10px;
 }
 
 .comments_list {
@@ -202,7 +202,7 @@ a {
   background-color: #f6f6f6;
   border: 1px solid white;
   border-radius: 5px;
-  padding: 20px;
+  padding: 10px; /* パディングを調整 */
   margin-top: 15px;
   margin-bottom: 15px;
   width: 90%;
