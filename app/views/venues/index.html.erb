@@ -1,6 +1,6 @@
 <main class="main">
   <div class="inner">
-    <div class="form__wrapper">
+    <div class="card__wrapper">
       <h1 class="page-heading">ライヴ会場キャッシュレス対応情報</h1>
       <% if user_signed_in? %>
         <div class="greeting">
@@ -9,8 +9,6 @@
         </div>
       <% end %>
     </div>
-    <div class="card__wrapper">
       <%= render partial: 'venue', collection: @venue %>
-    </div>
   </div>
 </main>
