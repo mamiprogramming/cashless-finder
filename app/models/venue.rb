@@ -10,4 +10,12 @@ class Venue < ApplicationRecord
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :prefecture
+
+  def self.search(search)
+    if search != ""
+      Venue.where('text LIKE(?)', "%#{search}%")
+    else
+      Venue.all
+    end
+  end
 end

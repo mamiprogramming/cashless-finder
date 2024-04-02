@@ -1,4 +1,6 @@
 class VenuesController < ApplicationController
+  before_action :move_to_index, except: [:search]
+
   def index
     @venue = Venue.all
   end
@@ -35,9 +37,20 @@ class VenuesController < ApplicationController
     end
   end
 
+  def search
+    query = params[:query]
+    @venues = Venue.where("place_name LIKE ?", "%#{query}%")
+  end
+
   private
 
   def venue_params
     params.require(:venue).permit(:place_name, :prefecture_id, :user_id)
+  end
+
+  def move_to_index
+    unless user_signed_in?
+      redirect_to action: :index
+    end
   end
 end

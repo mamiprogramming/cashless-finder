@@ -9,6 +9,10 @@
         </div>
       <% end %>
     </div>
-      <%= render partial: 'venue', collection: @venue %>
+    <%= form_with(url: search_venues_path, local: true, method: :get, class: "search-form") do |form| %>
+    <%= form.text_field :keyword, placeholder: "会場を検索する", class: "search-input" %>
+    <%= form.submit "Search", class: "search-btn" %>
+    <% end %>
+    <%= render partial: 'venue', collection: @venue %>
   </div>
 </main>
