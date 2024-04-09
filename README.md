@@ -12,7 +12,14 @@ https://cashless-finder.onrender.com
 
 # テスト用アカウント
 
-追記予定
+・Basic認証ID：admin
+・Basic認証パスワード:9999
+
+・ログイン用メールアドレス（てすと）：test@test
+・ログイン用パスワード（てすと）：aaa111
+
+・ログイン用メールアドレス（さんぷる）：sample@sample
+・ログイン用パスワード（さんぷる）：aaa111
 
 # 利用方法
 
@@ -72,11 +79,11 @@ https://cashless-finder.onrender.com
 
 # 工夫したポイント
 
-追記予定
+スマートフォンからの利用を想定した。
 
 # 改善点
 
-追記予定
+地図機能の実装を検討中。
 
 # 制作時間
 
