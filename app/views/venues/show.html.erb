@@ -5,7 +5,7 @@
         <%= @venue.place_name %>
       </p>
       <div class="detail__prefecture"><%= @venue.prefecture.name %></div>
-      <%= link_to "by #{@venue.user.user_name}", user_path(@venue.user), class: :detail__user %>
+      <%= link_to "by #{@venue.user.user_name}", '#' , class: :detail__user %>
       <% if current_user == @venue.user %>
         <div class="detail__manage">
           <%= link_to "編集", edit_venue_path(@venue), class: :edit__btn %>
@@ -24,7 +24,7 @@
                 <% end %>
                 <% if comment.user.present? %>
                   <div class="detail__at"><%= comment.created_at.strftime('%Y-%m-%d %H:%M:%S') %></div>
-                  <div class="detail__user">by: <%= link_to comment.user.user_name, user_path(comment.user), class: :comment_user %></div>
+                  <div class="detail__user">by: <%= link_to comment.user.user_name, '#' , class: :comment_user %></div>
                 <% end %>
                 <% if current_user == comment.user %>
                   <%= link_to "削除", venue_comment_path(@venue, comment), data: { turbo_method: :delete }, class: :delete__btn %>
