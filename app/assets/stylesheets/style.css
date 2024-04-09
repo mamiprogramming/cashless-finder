@@ -179,7 +179,7 @@ a {
 }
 
 .detail__cashless{
-  font-size: 26px;
+  font-size: 24px;
   font-weight: bold;
   text-decoration: underline;
   margin-bottom: 12px;
@@ -209,7 +209,7 @@ a {
   list-style: none;
   background-color: #f6f6f6;
   border: 1px solid white;
-  border-radius: 15px;
+  border-radius: 12px;
   padding: 10px;
   margin-top: 15px;
   margin-bottom: 15px;
