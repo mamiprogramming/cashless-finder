@@ -74,13 +74,13 @@ a {
   color: #fff;
   text-decoration: none;
   user-select: none;
-  border: 1px #1100ff;
+  border: 1px #999;
   border-radius: 3px;
   transition: 0.4s ease;
 }
 
 .nav__btn:hover{
-  background: #1100ff;
+  background: #999;
 }
 
 /* メイン */
@@ -139,9 +139,6 @@ a {
 
 /* メイン */
 /* 詳細ページ */
-.detail__wrapper{
-  min-height: calc(100vh - 161px);
-}
 
 .detail__hedding{
   font-size: 40px;
@@ -182,7 +179,7 @@ a {
 }
 
 .detail__cashless{
-  font-size: 24px;
+  font-size: 26px;
   font-weight: bold;
   text-decoration: underline;
   margin-bottom: 12px;
@@ -212,13 +209,38 @@ a {
   list-style: none;
   background-color: #f6f6f6;
   border: 1px solid white;
-  border-radius: 5px;
-  padding: 10px; /* パディングを調整 */
+  border-radius: 15px;
+  padding: 10px;
   margin-top: 15px;
   margin-bottom: 15px;
   width: 90%;
   margin-left: auto;
   margin-right: auto;
+}
+
+.edit__btn{
+  display: block;
+  padding: 0.4em 1.6em;
+  font-size: 0.4em;
+  color: #999;
+  text-decoration: none;
+  user-select: none;
+  border: 1px #999 solid;
+  border-radius: 3px;
+  transition: 0.4s ease;
+  margin: 0 4px;
+}
+
+.delete__btn{
+  padding: 0.4em 1.6em;
+  font-size: 0.4em;
+  color: #999;
+  text-decoration: none;
+  user-select: none;
+  border: 1px #999 solid;
+  border-radius: 3px;
+  transition: 0.4s ease;
+  margin: 0 4px;
 }
 
 /* メディアクエリを使用して、スマートフォンの画面幅に対して調整 */
@@ -230,24 +252,6 @@ a {
 
 .actions{
   text-align: center;
-}
-
-.nav__btn2{
-  display: inline-block;
-  padding: 0.4em 1.6em;
-  font-size: 0.8em;
-  color: #fff;
-  background-color: #000000;
-  text-decoration: none;
-  user-select: none;
-  border: 1px #1100ff;
-  border-radius: 3px;
-  transition: 0.4s ease;
-}
-
-.nav__btn2:hover{
-  color: #fff;
-  background: #1100ff;
 }
 
 /* フッター */

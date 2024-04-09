@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
        redirect_to venue_path(@comment.venue)
     else
       @venue = @comment.venue
-      @comments = @venue.comments
+      @comments = @venue.comments.order(created_at: :desc)
       render "venues/show" 
     end
   end

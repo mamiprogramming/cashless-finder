@@ -2,6 +2,7 @@ class VenuesController < ApplicationController
 
   def index
     @venues = Venue.all
+    @venues = Venue.includes(:user).order("created_at DESC")
   end
 
   def new
