@@ -1,8 +1,7 @@
 class VenuesController < ApplicationController
-  before_action :move_to_index, except: [:search]
 
   def index
-    @venue = Venue.all
+    @venues = Venue.all
   end
 
   def new
@@ -20,8 +19,12 @@ class VenuesController < ApplicationController
   end
 
   def show
-    @venue = Venue.find(params[:id])
-    @comments = @venue.comments
+    if params[:id] != "search"
+      @venue = Venue.find(params[:id])
+      @comments = @venue.comments
+    else
+      redirect_to search_venues_path
+    end
   end
 
   def edit
@@ -46,11 +49,5 @@ class VenuesController < ApplicationController
 
   def venue_params
     params.require(:venue).permit(:place_name, :prefecture_id, :user_id)
-  end
-
-  def move_to_index
-    unless user_signed_in?
-      redirect_to action: :index
-    end
   end
 end
