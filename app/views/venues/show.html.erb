@@ -8,7 +8,7 @@
       <%= link_to "by #{@venue.user.user_name}", user_path(@venue.user), class: :detail__user %>
       <% if current_user == @venue.user %>
         <div class="detail__manage">
-          <%= link_to "Edit", edit_venue_path(@venue), class: :nav__btn2 %>
+          <%= link_to "編集", edit_venue_path(@venue), class: :nav__btn2 %>
         </div>
       <% end %>
       <div class="detail__comments">
@@ -27,7 +27,7 @@
                   <div class="detail__user">by: <%= link_to comment.user.user_name, user_path(comment.user), class: :comment_user %></div>
                 <% end %>
                 <% if current_user == comment.user %>
-                  <%= link_to "Delete", venue_comment_path(@venue, comment), data: { turbo_method: :delete }, class: :nav__btn2 %>
+                  <%= link_to "削除", venue_comment_path(@venue, comment), data: { turbo_method: :delete }, class: :nav__btn2 %>
                 <% end %>
               </li>
             <% end %>
@@ -42,7 +42,7 @@
               <%= f.text_area :text, id: "comment_content", rows: 5, cols: 20 %><br />
             </div>
             <div class="actions">
-              <%= f.submit "Send", class: :nav__btn2  %>
+              <%= f.submit "送信", class: :nav__btn2  %>
             </div>
           <% end %>
         <% end %>

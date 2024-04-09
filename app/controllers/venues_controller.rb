@@ -41,9 +41,22 @@ class VenuesController < ApplicationController
   end
 
   def search
-    query = params[:keyword]
-    @venues = Venue.where("place_name LIKE ?", "%#{query}%")
-  end  
+    keyword = params[:keyword]
+    prefecture_id = params[:prefecture_id]
+  
+    @venues = Venue.all
+  
+    if keyword.present? && prefecture_id.present?
+      @venues = @venues.where("place_name LIKE ?", "%#{keyword}%")
+                       .where(prefecture_id: prefecture_id)
+    elsif keyword.present?
+      @venues = @venues.where("place_name LIKE ?", "%#{keyword}%")
+    elsif prefecture_id.present?
+      @venues = @venues.where(prefecture_id: prefecture_id)
+    end
+  
+    render :index
+  end
 
   private
 
