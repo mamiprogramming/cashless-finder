@@ -2,7 +2,7 @@ crumb :root do
   link "Home", root_path
 end
 
-crumb :users do
+crumb :new_user do
   link "ユーザー新規登録", new_user_registration_path
   parent :root
 end
@@ -12,7 +12,7 @@ crumb :users do
   parent :root
 end
 
-crumb :venues do
+crumb :new_venue do
   link "新規会場投稿", new_venue_path
   parent :root
 end
@@ -22,6 +22,10 @@ crumb :venues do
   parent :root
 end
 
+crumb :edit_venue do
+  link "会場編集", venue_path
+  parent :root
+end
 
 # crumb :projects do
 #   link "Projects", projects_path
