@@ -18,6 +18,8 @@
       <%= form.select :prefecture_id, Prefecture.all.map { |pref| [pref.name, pref.id] }, { include_blank: "都道府県" }, class: "search-input" %>
       <%= form.submit "検索", class: "search-btn" %>
       <p>会場名または都道府県から検索が出来ます</p>
+      <p>　</p>
+      <p>各会場の情報はこちらから🔽</p>
     <% end %>
     <div class="contents row">
       <% @venues.each do |venue| %>
