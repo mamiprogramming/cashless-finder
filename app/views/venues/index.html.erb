@@ -13,6 +13,7 @@
       <%= form.text_field :keyword, placeholder: "会場を検索する", class: "search-input" %>
       <%= form.select :prefecture_id, Prefecture.all.map { |pref| [pref.name, pref.id] }, { include_blank: "都道府県" }, class: "search-input" %>
       <%= form.submit "検索", class: "search-btn" %>
+      <p>会場名または都道府県から検索が出来ます</p>
     <% end %>
     <div class="contents row">
       <% @venues.each do |venue| %>
