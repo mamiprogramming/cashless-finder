@@ -102,6 +102,9 @@ GEM
     ffi (1.16.3)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    gretel (5.0.0)
+      actionview (>= 5.1, < 7.2)
+      railties (>= 5.1, < 7.2)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     image_processing (1.12.2)
@@ -278,6 +281,7 @@ DEPENDENCIES
   capybara
   debug
   devise
+  gretel
   image_processing (~> 1.2)
   importmap-rails
   jbuilder
