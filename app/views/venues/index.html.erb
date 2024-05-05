@@ -4,8 +4,12 @@
       <h1 class="page-heading">ライヴ会場キャッシュレス対応情報</h1><br />
       <% if user_signed_in? %>
         <div class="greeting">
-        こんにちは、
+        ようこそ、
         <%= link_to "#{current_user.user_name}さん", '#' , class: :greeting__link %>
+        <p>　</p>
+        <p>全国のライヴハウスのドリンク代支払い方法が</p>
+        <p>キャッシュレス対応しているか書き込んだり、</p>
+        <p>確認することが出来ます！</p>
         </div>
       <% end %>
     </div>
