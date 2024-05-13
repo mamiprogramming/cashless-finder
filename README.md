@@ -90,7 +90,7 @@ https://cashless-finder.onrender.com
 
 # データベース設計
 
-追記予定
+![Example Image](mk/ER.png)
 
 # 画面遷移図
 
