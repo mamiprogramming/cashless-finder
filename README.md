@@ -90,7 +90,7 @@ https://cashless-finder.onrender.com
 
 # データベース設計
 
-![Example Image](mk/ER.png)
+![ER Diagram](ER.png)
 
 # 画面遷移図
 
@@ -129,5 +129,11 @@ https://cashless-finder.onrender.com
 
 企画　２時間
 
-追記予定
+要件定義　２時間
+
+設計　時間
+
+開発　時間
+
+
 
